@@ -32,6 +32,7 @@ function App() {
             <h2>{film.title}</h2>
             {film.poster && <img src={film.poster} alt={film.title} />}
             <p>{film.overview}</p>
+            <p className="reason">🎯 {film.reason}</p>
           </div>
         ))}
       </div>
