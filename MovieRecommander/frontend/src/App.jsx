@@ -11,7 +11,7 @@ function App() {
       const response = await axios.get(`https://movierecommander-3xfc.onrender.com/recommendations/${movie}`);
       setResults(response.data);
     } catch (error) {
-      alert('Film introuvable ou erreur serveur.');
+      alert('Sorry, this movie could not be found :(');
     }
   };
 
@@ -20,11 +20,11 @@ function App() {
       <h1>🍿 MovieFinder AI</h1>
       <input
         type="text"
-        placeholder="Nom d'un film que tu as aimé..."
+        placeholder="Type the name of a movie you LIKED..."
         value={movie}
         onChange={(e) => setMovie(e.target.value)}
       />
-      <button onClick={searchMovies}>Chercher des films similaires</button>
+      <button onClick={searchMovies}>Search for similar movies !</button>
 
       <div className="movies">
         {results.map((film) => (
