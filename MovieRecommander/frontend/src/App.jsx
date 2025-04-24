@@ -15,11 +15,17 @@ function App() {
     }
   };
 
+  const reset = () => {
+    setMovie('');
+    setResults([]);
+  };
+
   return (
     <div className="app">
-      <h1>🍿 MovieFinder AI</h1>
+      <h1 className="title" onClick={reset}>🍿 MovieFinder AI</h1>
       <input
         type="text"
+        className="search-bar"
         placeholder="Nom d'un film que tu as aimé..."
         value={movie}
         onChange={(e) => setMovie(e.target.value)}
