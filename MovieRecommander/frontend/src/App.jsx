@@ -8,7 +8,7 @@ function App() {
 
   const searchMovies = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/recommendations/${movie}`);
+      const response = await axios.get(`https://movierecommander-3xfc.onrender.com/recommendations/${movie}`);
       setResults(response.data);
     } catch (error) {
       alert('Film introuvable ou erreur serveur.');
