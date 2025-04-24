@@ -71,15 +71,15 @@ def get_recommendations(movie_name: str):
         if shared_genres:
             reasons.append(f"genre(s) commun(s) : {', '.join(shared_genres)}")
         if shared_director:
-            reasons.append(f"réalisé par {', '.join(shared_director)}")
+            reasons.append(f"directed by {', '.join(shared_director)}")
         if shared_cast:
-            reasons.append(f"acteur(s) en commun : {', '.join(shared_cast)}")
+            reasons.append(f"featuring shared actors : {', '.join(shared_cast)}")
 
         enriched.append({
             "title": rec["title"],
             "overview": rec["overview"],
             "poster": f"https://image.tmdb.org/t/p/w500{rec['poster_path']}" if rec.get('poster_path') else None,
-            "reason": "Recommandé car " + ", et ".join(reasons) if reasons else "Recommandation basée sur la similarité globale."
+            "reason": "Recommended because " + ", et ".join(reasons) if reasons else "Recommendation based on overall similarity."
         })
 
     return enriched
